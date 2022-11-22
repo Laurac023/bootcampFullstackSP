@@ -3,57 +3,42 @@ package Challenge1;
 import java.util.*;
 
 public class Challenge1 {
-	
+	//Variables static que crean el scanner y la lista
 	static Scanner sc = new Scanner(System.in);
 	static List<String> lista = new ArrayList<String>();	
+	
+	//Metodo main
 	public static void main(String[]args){
-		int length,type,amountCadenas;
+		int length = 8;			
+	}
+	//Metodo que crea cierto número de cadenas y las va agregando a una lista
+	public static String crearCadena(int length,int type) {
 		String numbers, cadena="";
-		length = 8;		
-		System.out.print("Cuantas cadenas quiere generar:  ");
-		amountCadenas = sc.nextInt();
-		
-
-		for(int x = 0; x < amountCadenas; x++) {
-			int num = x+1;
-			System.out.print("Elija el tipo de la cadena número " + num + " de texto: Tipo A = 1  o B = 2 ");
-			type = sc.nextInt();
-
 			if(type == 1) {
 				cadena = "54";
-				for(int i = 1; i<=length;i++) {
-					numbers = String.valueOf(Double.valueOf(Math.random()*10).intValue());
-					cadena += numbers;
-				}
-				lista.add(cadena);
 			}else {
 				cadena = "08";
-				for(int i = 1; i<=length;i++) {
-					numbers = String.valueOf(Double.valueOf(Math.random()*10).intValue());
-					cadena += numbers;
-				}
-				lista.add(cadena);
 			}
-		}
-		System.out.println("La lista es " + lista);
-		System.out.println("La lista es " + lista.get(1));
+			for(int i = 1; i<=length;i++) {
+				numbers = String.valueOf(Double.valueOf(Math.random()*10).intValue());
+				cadena += numbers;
+			}
+		return cadena;
 	}
+
 	//metodo para ver si la cadena esta en la lista o no
-	public boolean verify() {
+	public static boolean verify(String str, List<String>lista) {
 		boolean existe = false;
-		String insert, posicion;
+		String posicion;
 		int size = lista.size();
-		System.out.print("Ingrese su cadena de 10 digitos: ");
-		insert = sc.nextLine();
 		for (int y =0; y < size; y++) {
 			posicion = lista.get(y);
-			if(insert.equals(posicion)){
+			if(str.equals(posicion)){
 				existe = false;
 			}else {
 				existe = true;
 			}
 		}
-		System.out.println("La cadena es: " + existe);
 		return existe;
 	}
 }
