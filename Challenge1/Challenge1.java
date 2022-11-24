@@ -9,17 +9,17 @@ public class Challenge1 {
 	
 	//Metodo main
 	public static void main(String[]args){
-		int length = 8;			
 	}
 	//Metodo que crea cierto número de cadenas y las va agregando a una lista
-	public static String crearCadena(int length,int type) {
+	public static String crearCadena(String type) {
 		String numbers, cadena="";
-			if(type == 1) {
+		int length1 = 8;	
+			if(type.equals("A")) {
 				cadena = "54";
 			}else {
 				cadena = "08";
 			}
-			for(int i = 1; i<=length;i++) {
+			for(int i = 1; i<=length1;i++) {
 				numbers = String.valueOf(Double.valueOf(Math.random()*10).intValue());
 				cadena += numbers;
 			}
@@ -35,6 +35,7 @@ public class Challenge1 {
 			posicion = lista.get(y);
 			if(str.equals(posicion)){
 				existe = false;
+				break;
 			}else {
 				existe = true;
 			}
