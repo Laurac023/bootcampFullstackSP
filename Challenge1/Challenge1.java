@@ -3,8 +3,7 @@ package Challenge1;
 import java.util.*;
 
 public class Challenge1 {
-	//Variables static que crean el scanner y la lista
-	static Scanner sc = new Scanner(System.in);
+	//Variables static para la creacion de la lista
 	static List<String> lista = new ArrayList<String>();	
 	
 	//Metodo main
